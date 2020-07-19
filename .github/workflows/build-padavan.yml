@@ -119,6 +119,7 @@ jobs:
         sudo ./build_firmware_modify $TNAME 0
         sudo mv -f images/*.trx /opt/images/
         sudo cp /opt/rt-n56u/trunk/.config /opt/images/
+        sudo sha1sum NEWIFI3_3.4.3.9-099.trx > sha1.txt
     - name : Upload packages
       uses: actions/upload-artifact@master
       if: always()
