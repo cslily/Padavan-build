@@ -38,12 +38,17 @@ jobs:
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
+    - name: Set V2ray Version
+      run: |
+        cd /opt/rt-n56u/trunk/user/v2ray
+        sed -i 's/V2ray_VERSION := 4.31.2/V2ray_VERSION := 4.28.2/g' Makefile
+        cat Makefile
     - name: Set Golang
       run: |
         cd /opt/hostedtoolcache/go
-        dir
-        #rm -rf /opt/hostedtoolcache/go/1.14.12
-        #mv 1.15.6 1.14.12
+        #dir
+        rm -rf /opt/hostedtoolcache/go/1.14.12
+        mv 1.15.6 1.14.12
     - name: Build Firmware
       env:
         #TNAME: K2P-5.0
