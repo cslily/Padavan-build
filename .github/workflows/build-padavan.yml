@@ -38,10 +38,15 @@ jobs:
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
-    - name: Set V2ray Version
+    #- name: Set V2ray Version
+      #run: |
+        #cd /opt/rt-n56u/trunk/user/v2ray
+        #sed -i 's/V2ray_VERSION := 4.31.2/V2ray_VERSION := 4.28.2/g' Makefile
+        #cat Makefile
+    - name: Modify V2ray Url
       run: |
         cd /opt/rt-n56u/trunk/user/v2ray
-        sed -i 's/V2ray_VERSION := 4.31.2/V2ray_VERSION := 4.28.2/g' Makefile
+        sed -i 's/V2ray_URL := https://codeload.github.com/v2ray/v2ray-core/tar.gz/v$(V2ray_VERSION)/V2ray_URL := https://codeload.github.com/v2fly/v2ray-core/tar.gz/v$(V2ray_VERSION)/g' Makefile
         cat Makefile
     - name: Set Golang
       run: |
