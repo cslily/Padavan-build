@@ -38,9 +38,9 @@ jobs:
         cd /opt
         git init test && cd test
         git config core.sparsecheckout true
-        echo '/trunk/user/v2ray' >> .git/info/sparse-checkout
-        git remote add origin ssh://git@github.com/chongshengB/rt-n56u.git
-        git pull origin master
+        echo 'trunk/user/v2ray' >> .git/info/sparse-checkout
+        git remote add origin https://github.com/chongshengB/rt-n56u.git
+        git pull--depth=1 origin master
         cp /opt/test/trunk/user/v2ray /opt/rt-n56u/trunk/user/v2ray
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
