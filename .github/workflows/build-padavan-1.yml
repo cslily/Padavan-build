@@ -35,7 +35,7 @@ jobs:
       run: |
         git clone --depth=1 https://github.com/cslily/rt-n56u.git /opt/rt-n56u
         #git clone --depth=1 -b dev https://github.com/cslily/rt-n56u.git /opt/rt-n56u
-        cd opt
+        cd /opt
         git init test && cd test
         git config core.sparsecheckout true
         echo '/trunk/user/v2ray' >> .git/info/sparse-checkout
