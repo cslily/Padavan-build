@@ -17,7 +17,7 @@ on:
         default: 'false'
         
 env:
-  REPO_URL: https://github.com/cslily/lede
+  REPO_URL: https://github.com/cslily/rt-n56u
   REPO_BRANCH: dev
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
