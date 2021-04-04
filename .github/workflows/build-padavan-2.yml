@@ -64,7 +64,9 @@ jobs:
         #mv 1.15.6 1.14.12
         mkdir 1.16.3 && cd 1.16.3
         wget https://golang.org/dl/go1.16.3.linux-amd64.tar.gz && tar -C /opt/hostedtoolcache/go/1.16.3/ -xzf go1.16.3.linux-amd64.tar.gz
-        mv go x64 && touch x64.complete
+        rm -rf go1.16.3.linux-amd64.tar.gz
+        mv go x64
+        touch x64.complete
     - name: Build Firmware
       env:
         #TNAME: K2P-5.0
