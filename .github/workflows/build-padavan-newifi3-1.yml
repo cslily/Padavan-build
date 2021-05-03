@@ -5,7 +5,7 @@
 # Description: Build Padavan using GitHub Actions
 #
 
-name: Build Padavan Newifi3
+name: Build Padavan Newifi3-1
 
 on:
   repository_dispatch:
